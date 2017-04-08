@@ -35,6 +35,7 @@ namespace EmployeeManager
             App.Current.MainWindow = window;
 
             current.Close();
+            window.Show();
         }
     }
 }

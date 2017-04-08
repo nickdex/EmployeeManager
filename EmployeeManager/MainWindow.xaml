@@ -4,7 +4,7 @@
         xmlns:viewmodel ="clr-namespace:EmployeeManager.ViewModels"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <viewmodel:EmployeeViewModel x:Key="employeeViewModel"/>
+        <viewmodel:AddEmployeeViewModel x:Key="employeeViewModel"/>
     </Window.Resources>
     <StackPanel Orientation="Vertical">
         <Button Content="Add Employee" Margin="0,5,0,5" Width="200" Click="GoToAddEmployeeWindow"/>

@@ -61,6 +61,7 @@
     <Compile Include="Base\IDataSource.cs" />
     <Compile Include="Implementations\LocalDataSource.cs" />
     <Compile Include="Implementations\MessageViewer.cs" />
+    <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Page Include="AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>

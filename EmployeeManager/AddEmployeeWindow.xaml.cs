@@ -25,12 +25,12 @@ namespace EmployeeManager
     public partial class AddEmployeeWindow : Window
     {
         
-        public EmployeeViewModel _viewModel {get; set;}
+        public AddEmployeeViewModel _viewModel {get; set;}
 
         public AddEmployeeWindow()
         {
             InitializeComponent();
-            this.DataContext = new EmployeeViewModel();
+            this.DataContext = new AddEmployeeViewModel();
         }
 
     }

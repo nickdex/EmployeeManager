@@ -15,7 +15,7 @@ namespace EmployeeManager.Test
         [TestMethod]
         public void EmptyIdShouldFail()
         {
-            EmployeeViewModel viewModel = new EmployeeViewModel();
+            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
             emp.Id = null;
             bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
             Assert.AreEqual(canAdd, false);
@@ -25,7 +25,7 @@ namespace EmployeeManager.Test
         [TestMethod]
         public void EmptyAgeShouldFail()
         {
-            EmployeeViewModel viewModel = new EmployeeViewModel();
+            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
             emp.Age = null;
             bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
             Assert.AreEqual(canAdd, false);
@@ -35,7 +35,7 @@ namespace EmployeeManager.Test
         [TestMethod]
         public void EmptyNameShouldFail()
         {
-            EmployeeViewModel viewModel = new EmployeeViewModel();
+            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
             emp.Name = null;
             bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
             Assert.AreEqual(canAdd, false);
