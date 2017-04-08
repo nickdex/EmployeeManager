@@ -30,7 +30,11 @@ namespace EmployeeManager
 
         private void GoToAddEmployeeWindow(object sender, RoutedEventArgs e)
         {
+            AddEmployeeWindow window = new AddEmployeeWindow();
+            var current =  App.Current.MainWindow;
+            App.Current.MainWindow = window;
 
+            current.Close();
         }
     }
 }

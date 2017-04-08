@@ -21,7 +21,20 @@ namespace EmployeeManager.ViewModels
         private IDataSource<Employee> dataSource;
         private IMessageViewer _viewer;
 
-        public EmployeeViewModel()
+        private EmployeeViewModel _instance;
+
+        public EmployeeViewModel getInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new EmployeeViewModel();
+            }
+
+            return _instance;
+            
+        }
+
+        private EmployeeViewModel()
         {
             dataSource = new LocalDataSource();
             SaveDelegateCommand = new DelegateCommand(canAddEmployee, AddEmployee);
