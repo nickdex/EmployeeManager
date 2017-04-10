@@ -53,37 +53,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddEmployeeWindow.xaml.cs">
+    <Compile Include="AddEmployee\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\IMessageViewer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
-    <Compile Include="Base\IDataSource.cs" />
-    <Compile Include="DeleteEmployeeWindow.xaml.cs">
+    <Compile Include="DataSource\IDataSource.cs" />
+    <Compile Include="DeleteEmployee\DeleteEmployeeWindow.xaml.cs">
       <DependentUpon>DeleteEmployeeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditEmployeeWindow.xaml.cs">
+    <Compile Include="EditEmployee\EditEmployeeWindow.xaml.cs">
       <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\LocalDataSource.cs" />
+    <Compile Include="DataSource\LocalDataSource.cs" />
     <Compile Include="Implementations\MessageViewer.cs" />
-    <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
-    <Compile Include="ViewModels\DeleteEmployeeViewModel.cs" />
-    <Compile Include="ViewModels\EditEmployeeViewModel.cs" />
-    <Compile Include="ViewModels\EmployeeViewModel.cs" />
-    <Page Include="AddEmployeeWindow.xaml">
+    <Compile Include="AddEmployee\AddEmployeeViewModel.cs" />
+    <Compile Include="DeleteEmployee\DeleteEmployeeViewModel.cs" />
+    <Compile Include="EditEmployee\EditEmployeeViewModel.cs" />
+    <Compile Include="GridWindow\EmployeeViewModel.cs" />
+    <Page Include="AddEmployee\AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteEmployeeWindow.xaml">
+    <Page Include="DeleteEmployee\DeleteEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditEmployeeWindow.xaml">
+    <Page Include="EditEmployee\EditEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="GridWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -92,7 +92,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Base\BaseModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="GridWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -125,9 +125,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSource\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
