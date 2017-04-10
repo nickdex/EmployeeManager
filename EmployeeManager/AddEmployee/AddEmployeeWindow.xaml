@@ -1,8 +1,6 @@
 ﻿<Window x:Class="EmployeeManager.AddEmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:model ="clr-namespace:EmployeeManager.Models"
-        xmlns:viewmodel ="clr-namespace:EmployeeManager.ViewModels"
         Title="AddEmployeeWindow" Height="300" Width="300">
     <Window.Resources>
         <Style TargetType="TextBox">
