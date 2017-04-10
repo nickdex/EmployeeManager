@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManager.ViewModels
 {
-    class DeleteEmployeeViewModel
+    class DeleteEmployeeViewModel : BaseViewModel
     {
         public Employee Employee { get; set; }
         public DelegateCommand AffirmativeDeleteDelegateCommand { get; set; }
@@ -56,14 +56,6 @@ namespace EmployeeManager.ViewModels
         } 
         #endregion
 
-        private void GoToMainWindow()
-        {
-            MainWindow window = new MainWindow();
-            var current = App.Current.MainWindow;
-            App.Current.MainWindow = window;
-
-            window.Show();
-            current.Close();
-        }
+       
     }
 }

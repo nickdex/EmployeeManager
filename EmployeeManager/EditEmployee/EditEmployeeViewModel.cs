@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManager.ViewModels
 {
-    class EditEmployeeViewModel
+    class EditEmployeeViewModel : BaseViewModel
     {
         public Employee Employee { get; set; }
         public DelegateCommand UpdateDelegateCommand { get; set; }
@@ -50,14 +50,6 @@ namespace EmployeeManager.ViewModels
             return true;
         }
 
-        private void GoToMainWindow()
-        {
-            MainWindow window = new MainWindow();
-            var current = App.Current.MainWindow;
-            App.Current.MainWindow = window;
-
-            window.Show();
-            current.Close();
-        }
+       
     }
 }

@@ -11,7 +11,7 @@ using EmployeeManager.Base;
 
 namespace EmployeeManager.ViewModels
 {
-    public class AddEmployeeViewModel
+    class AddEmployeeViewModel : BaseViewModel
     {
         public Employee Employee { get; set; }
         public DelegateCommand SaveDelegateCommand { get; set; }
@@ -57,16 +57,6 @@ namespace EmployeeManager.ViewModels
                 _viewer.Show("Check Employee Details");
             }
 
-        }
-
-        private void GoToMainWindow()
-        {
-            MainWindow window = new MainWindow();
-            var current = App.Current.MainWindow;
-            App.Current.MainWindow = window;
-
-            window.Show();
-            current.Close();
         }
 
         private bool canAddEmployee(object obj)
