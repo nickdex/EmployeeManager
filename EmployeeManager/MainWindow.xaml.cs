@@ -1,4 +1,5 @@
-﻿using EmployeeManager.ViewModels;
+﻿using EmployeeManager.Models;
+using EmployeeManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,34 @@ namespace EmployeeManager
             this.DataContext = new EmployeeViewModel();
         }
 
-        private void GoToAddEmployeeWindow(object sender, RoutedEventArgs e)
+        private void SwitchWindows(Window window)
         {
-            AddEmployeeWindow window = new AddEmployeeWindow();
-            var current =  App.Current.MainWindow;
+            var current = App.Current.MainWindow;
             App.Current.MainWindow = window;
 
-            current.Close();
             window.Show();
+            current.Close();
         }
+
+        private void GoToAddEmployeeWindow(object sender, RoutedEventArgs e)
+        {
+            AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
+            SwitchWindows(addEmployeeWindow);
+        }
+
+        private void GoToEditEmployeeWindow(object sender, RoutedEventArgs e)
+        {
+            Employee Employee = ((FrameworkElement)sender).DataContext as Employee;
+            EditEmployeeWindow editEmployeeWindow = new EditEmployeeWindow(Employee);
+            SwitchWindows(editEmployeeWindow);
+        }
+
+        private void GoToDeleteEmployeeWindow(object sender, RoutedEventArgs e)
+        {
+            Employee Employee = ((FrameworkElement)sender).DataContext as Employee;
+            DeleteEmployeeWindow deleteEmployeeWindow = new DeleteEmployeeWindow(Employee);
+            SwitchWindows(deleteEmployeeWindow);
+        }
+
     }
 }

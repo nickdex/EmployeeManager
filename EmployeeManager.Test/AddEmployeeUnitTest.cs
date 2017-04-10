@@ -16,7 +16,6 @@ namespace EmployeeManager.Test
         public void EmptyIdShouldFail()
         {
             AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
-            emp.Id = null;
             bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
             Assert.AreEqual(canAdd, false);
 
@@ -26,7 +25,6 @@ namespace EmployeeManager.Test
         public void EmptyAgeShouldFail()
         {
             AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
-            emp.Age = null;
             bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
             Assert.AreEqual(canAdd, false);
 

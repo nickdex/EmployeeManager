@@ -45,7 +45,12 @@ namespace EmployeeManager.ViewModels
 
         private void GoToMainWindow()
         {
-            throw new NotImplementedException();
+            MainWindow window = new MainWindow();
+            var current = App.Current.MainWindow;
+            App.Current.MainWindow = window;
+
+            window.Show();
+            current.Close();
         }
 
         private bool canAddEmployee(object obj)

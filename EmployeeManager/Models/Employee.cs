@@ -10,13 +10,11 @@ namespace EmployeeManager.Models
 {
     public class Employee : BaseModel, IDataErrorInfo
     {
-        private int? _id;
+        private int _id;
         private string _name;
-        private byte? _age;
-        private string _firstName;
-        private string _lastName;
+        private byte _age;
 
-        public int? Id 
+        public int Id 
         {
             get
             {
@@ -42,7 +40,7 @@ namespace EmployeeManager.Models
             }
         }
 
-        public byte? Age
+        public byte Age
         {
             get
             {
@@ -65,21 +63,17 @@ namespace EmployeeManager.Models
         {
             get
             {
-                if (string.IsNullOrEmpty(Name))
+                if (Id <= 0 && columnName == Id.ToString())
+                {
+                    return "Id must be positive";
+                }
+                if (Age <= 0 && columnName == Age.ToString())
+                {
+                    return "Age must be positive";
+                }
+                if (string.IsNullOrEmpty(Name) && Name == columnName)
                 {
                     return "Name is required";
-                }
-                if (Id < 0)
-                {
-                    return "Id is negative";
-                }
-                if (Id == null)
-                {
-                    return "Id is required";
-                }
-                if (Age == null)
-                {
-                    return "Age is required";
                 }
                 return null;
             }

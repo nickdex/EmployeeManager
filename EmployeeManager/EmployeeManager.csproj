@@ -59,11 +59,27 @@
     <Compile Include="Base\IMessageViewer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Base\IDataSource.cs" />
+    <Compile Include="DeleteEmployeeWindow.xaml.cs">
+      <DependentUpon>DeleteEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployeeWindow.xaml.cs">
+      <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Implementations\LocalDataSource.cs" />
     <Compile Include="Implementations\MessageViewer.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\DeleteEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\EditEmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Page Include="AddEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
