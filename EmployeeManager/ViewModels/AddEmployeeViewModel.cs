@@ -62,16 +62,21 @@ namespace EmployeeManager.ViewModels
 
         private bool canAddEmployee(object obj)
         {
-            Employee emp = obj as Employee;
+            //Employee emp = obj as Employee;
 
-            var id = emp.Id;
-            var age = emp.Age;
-            var name = emp.Name;
+            //if (emp == null)
+            //{
+            //    return false;
+            //}
 
-            if (id == null || age == null || string.IsNullOrWhiteSpace(name))
-            {
-                return false;
-            }
+            //var id = emp.Id;
+            //var age = emp.Age;
+            //var name = emp.Name;
+
+            //if (id == null || age == null || string.IsNullOrWhiteSpace(name))
+            //{
+            //    return false;
+            //}
             return true;
         }
     }
