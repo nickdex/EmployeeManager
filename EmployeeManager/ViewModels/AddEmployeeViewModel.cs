@@ -15,34 +15,16 @@ namespace EmployeeManager.ViewModels
     {
         public Employee Employee { get; set; }
         public DelegateCommand SaveDelegateCommand { get; set; }
-        public List<Employee> empList { get; set; }
-
 
         private IDataSource<Employee> dataSource;
         private IMessageViewer _viewer;
 
-        //public static EmployeeViewModel getInstance()
-        //{
-        //    if (_instance == null)
-        //    {
-        //        _instance = new EmployeeViewModel();
-        //    }
-
-        //    return _instance;
-            
-        //}
-
-
         public AddEmployeeViewModel()
         {
+            Employee = new Employee();
             dataSource = new LocalDataSource();
-            SaveDelegateCommand = new DelegateCommand(canAddEmployee, AddEmployee);
             _viewer = new MessageViewer();
-
-            empList = dataSource.GetAllItems();
-
-            empList.Add(new Employee { Id = 1, Age = 2, Name = "Ojasvi" });
-            empList.Add(new Employee { Id = 12, Age = 22, Name = "Nikhil" });
+            SaveDelegateCommand = new DelegateCommand(canAddEmployee, AddEmployee);
 
         }
 
@@ -52,12 +34,18 @@ namespace EmployeeManager.ViewModels
             if (employee != null)
             {
                 dataSource.Add(employee);
+                GoToMainWindow();
             }
             else
             {
                 _viewer.Show("Check Employee Details");
             }
 
+        }
+
+        private void GoToMainWindow()
+        {
+            throw new NotImplementedException();
         }
 
         private bool canAddEmployee(object obj)

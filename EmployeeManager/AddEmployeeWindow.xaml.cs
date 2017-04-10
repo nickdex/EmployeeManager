@@ -24,9 +24,6 @@ namespace EmployeeManager
     /// </summary>
     public partial class AddEmployeeWindow : Window
     {
-        
-        public AddEmployeeViewModel _viewModel {get; set;}
-
         public AddEmployeeWindow()
         {
             InitializeComponent();
