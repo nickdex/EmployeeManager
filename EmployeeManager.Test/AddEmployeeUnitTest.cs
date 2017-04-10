@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EmployeeManager.ViewModels;
 using EmployeeManager.Models;
+using EmployeeManager.DataSource;
+using Moq;
 
 namespace EmployeeManager.Test
 {
@@ -10,34 +12,17 @@ namespace EmployeeManager.Test
     {
         Employee emp = new Employee { Id = 1, Age = 12, Name = "Nikhil" };
 
+        Mock<IDataSource<Employee>> db = new Mock<IDataSource<Employee>>();
         
 
         [TestMethod]
-        public void EmptyIdShouldFail()
+        public void AddEmployeeToDataSourceAndNavigateToMainWindow()
         {
-            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
-            bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
-            Assert.AreEqual(canAdd, false);
-
+            
+            AddEmployeeViewModel viewModel = new AddEmployeeViewModel(db.Object);
+            viewModel.SaveDelegateCommand.Execute(emp);
+            db.Verify(o => o.Add(emp));
         }
 
-        [TestMethod]
-        public void EmptyAgeShouldFail()
-        {
-            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
-            bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
-            Assert.AreEqual(canAdd, false);
-
-        }
-
-        [TestMethod]
-        public void EmptyNameShouldFail()
-        {
-            AddEmployeeViewModel viewModel = new AddEmployeeViewModel();
-            emp.Name = null;
-            bool canAdd = viewModel.SaveDelegateCommand.CanExecute(emp);
-            Assert.AreEqual(canAdd, false);
-
-        }
     }
 }

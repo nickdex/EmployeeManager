@@ -3,8 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel Orientation="Vertical">
-        <Button Content="Add Employee" Margin="0,5,0,5" Width="200" Click="GoToAddEmployeeWindow"/>
-        <DataGrid Height="290" ItemsSource="{Binding empList}" AutoGenerateColumns="True">
+        <Grid Height="130">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="White" Offset="0.75" />
+                    <GradientStop Color="CadetBlue" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Margin="0,0,150,-68" Source="background_people.png" Stretch="Fill"/>
+            <Button Content="Add Employee" Margin="158,93,159,5" Width="200" Click="GoToAddEmployeeWindow"/>
+
+        </Grid>
+        <DataGrid Height="191" ItemsSource="{Binding empList}" AutoGenerateColumns="True">
+            <DataGrid.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="White" Offset="0.2" />
+                    <GradientStop Color="Moccasin" Offset="1.0" />
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>

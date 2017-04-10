@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManager.DataSource
 {
-    interface IDataSource<T>
+    public interface IDataSource<T>
     {
         void Add(T item);
         bool Delete(int itemId);

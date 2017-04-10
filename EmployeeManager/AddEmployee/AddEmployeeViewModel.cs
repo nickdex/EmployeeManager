@@ -16,16 +16,24 @@ namespace EmployeeManager.ViewModels
         public Employee Employee { get; set; }
         public DelegateCommand SaveDelegateCommand { get; set; }
 
-        private IDataSource<Employee> dataSource;
+        private IDataSource<Employee> _dataSource;
         private IMessageViewer _viewer;
 
-        public AddEmployeeViewModel()
+        private void Init()
         {
             Employee = new Employee();
-            dataSource = new LocalDataSource();
             _viewer = new MessageViewer();
             SaveDelegateCommand = new DelegateCommand(canAddEmployee, AddEmployee);
+        }
 
+        public AddEmployeeViewModel() : this(new LocalDataSource())
+        {
+            
+        }
+
+        public AddEmployeeViewModel(IDataSource<Employee> dataSource){
+            _dataSource = dataSource;
+            Init();
         }
 
         private void AddEmployee(object obj)
@@ -35,7 +43,7 @@ namespace EmployeeManager.ViewModels
             {
                 try
                 {
-                    dataSource.Add(employee);
+                    _dataSource.Add(employee);
                     GoToMainWindow();
                 }
                 catch (ArgumentException)
