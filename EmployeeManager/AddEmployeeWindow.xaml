@@ -38,7 +38,7 @@
       
         <TextBox Name="idTxtBox" HorizontalAlignment="Left" Height="23" Margin="120,67,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text >
-                <Binding Path="Employee.Id" UpdateSourceTrigger="PropertyChanged">
+                <Binding Path="Employee.Id" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <DataErrorValidationRule />
                     </Binding.ValidationRules>
@@ -47,7 +47,7 @@
         </TextBox>
         <TextBox Name="nameTxtBox" HorizontalAlignment="Left" Height="23" Margin="120,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text>
-                <Binding Path="Employee.Name" UpdateSourceTrigger="PropertyChanged">
+                <Binding Path="Employee.Name" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <DataErrorValidationRule />
                     </Binding.ValidationRules>
@@ -56,7 +56,7 @@
         </TextBox>
         <TextBox Name="ageTxtBox" HorizontalAlignment="Left" Height="23" Margin="120,171,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text>
-                <Binding Path="Employee.Age" UpdateSourceTrigger="PropertyChanged">
+                <Binding Path="Employee.Age" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <DataErrorValidationRule />
                     </Binding.ValidationRules>

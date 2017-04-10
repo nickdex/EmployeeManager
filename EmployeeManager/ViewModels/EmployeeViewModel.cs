@@ -23,9 +23,6 @@ namespace EmployeeManager.ViewModels
             _viewer = new MessageViewer();
 
             empList = dataSource.GetAllItems();
-
-            empList.Add(new Employee { Id = 1, Age = 2, Name = "Ojasvi" });
-            empList.Add(new Employee { Id = 12, Age = 22, Name = "Nikhil" });
 	    }
        
     }

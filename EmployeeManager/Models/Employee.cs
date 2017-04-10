@@ -63,15 +63,19 @@ namespace EmployeeManager.Models
         {
             get
             {
-                if (Id <= 0 && columnName == Id.ToString())
+                if (columnName == "Id")
                 {
-                    return "Id must be positive";
+                    if (_id <= 0)
+	                {
+                        return "Id must be positive";
+	                }
+
                 }
-                if (Age <= 0 && columnName == Age.ToString())
+                if (columnName == "Age" && _age <= 0)
                 {
                     return "Age must be positive";
                 }
-                if (string.IsNullOrEmpty(Name) && Name == columnName)
+                if (columnName == "Name" && string.IsNullOrEmpty(Name))
                 {
                     return "Name is required";
                 }

@@ -33,8 +33,16 @@ namespace EmployeeManager.ViewModels
             Employee employee = obj as Employee;
             if (employee != null)
             {
-                dataSource.Add(employee);
-                GoToMainWindow();
+                try
+                {
+                    dataSource.Add(employee);
+                    GoToMainWindow();
+                }
+                catch (ArgumentException)
+                {
+                    _viewer.Show("Duplicate Id. Please change it");
+                }
+                
             }
             else
             {
@@ -55,21 +63,6 @@ namespace EmployeeManager.ViewModels
 
         private bool canAddEmployee(object obj)
         {
-            //Employee emp = obj as Employee;
-
-            //if (emp == null)
-            //{
-            //    return false;
-            //}
-
-            //var id = emp.Id;
-            //var age = emp.Age;
-            //var name = emp.Name;
-
-            //if (id == null || age == null || string.IsNullOrWhiteSpace(name))
-            //{
-            //    return false;
-            //}
             return true;
         }
     }
