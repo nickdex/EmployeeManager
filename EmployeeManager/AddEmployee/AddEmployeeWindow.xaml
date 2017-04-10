@@ -34,7 +34,7 @@
         <Label Content="Age" HorizontalAlignment="Left" Margin="77,169,0,0" VerticalAlignment="Top"/>
         <Button Content="Save" Command="{Binding SaveDelegateCommand}" CommandParameter="{Binding Employee}" HorizontalAlignment="Left" Margin="107,222,0,0" VerticalAlignment="Top" Width="75"/>
       
-        <TextBox Name="idTxtBox" HorizontalAlignment="Left" Height="23" Margin="120,67,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
+        <TextBox Name="idTxtBox" MaxLength="9" HorizontalAlignment="Left" Height="23" Margin="120,67,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text >
                 <Binding Path="Employee.Id" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
@@ -52,7 +52,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Name="ageTxtBox" HorizontalAlignment="Left" Height="23" Margin="120,171,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
+        <TextBox Name="ageTxtBox" MaxLength="2" HorizontalAlignment="Left" Height="23" Margin="120,171,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text>
                 <Binding Path="Employee.Age" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>

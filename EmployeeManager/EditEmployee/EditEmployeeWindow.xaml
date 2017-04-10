@@ -43,9 +43,9 @@
                         <DataErrorValidationRule />
                     </Binding.ValidationRules>
                 </Binding>
-            </TextBox.Text>
+            </TextBox.Text> 
         </TextBox>
-        <TextBox Name="ageTxtBox" HorizontalAlignment="Left" Height="23" Margin="107,171,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
+        <TextBox Name="ageTxtBox" MaxLength="2" HorizontalAlignment="Left" Height="23" Margin="107,171,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120">
             <TextBox.Text>
                 <Binding Path="Employee.Age" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
