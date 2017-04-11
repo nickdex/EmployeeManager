@@ -13,12 +13,11 @@ namespace EmployeeManager.Test
         Employee emp = new Employee { Id = 1, Age = 12, Name = "Nikhil" };
 
         Mock<IDataSource<Employee>> db = new Mock<IDataSource<Employee>>();
-        
+
 
         [TestMethod]
-        public void AddEmployeeToDataSourceAndNavigateToMainWindow()
+        public void AddEmployeeToDataSource()
         {
-            
             AddEmployeeViewModel viewModel = new AddEmployeeViewModel(db.Object);
             viewModel.SaveDelegateCommand.Execute(emp);
             db.Verify(o => o.Add(emp));
